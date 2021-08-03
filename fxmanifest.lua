@@ -35,6 +35,7 @@ client_scripts {
     "@RageUI/menu/panels/UIStatisticsPanel.lua",
     
     "@RageUI/menu/windows/UIHeritage.lua",
+    "@RageUI/menu/windows/UIImage.lua",
 }
 
 client_scripts {
@@ -45,15 +46,31 @@ client_scripts {
     'data/data_vestiaire.lua',
     'data/data_armurerie.lua',
 
+    'Config.lua',
     'client/utils/_function.lua',
     'client/utils/visual.lua',
+    'client/utils/anim.lua',
+    'client/utils/keys.lua',
+    'client/utils/other.lua',
 
+    
     'client/lifesystem/garage/_function.lua',
     'client/lifesystem/garage/menu.lua',
     'client/lifesystem/vestiaire/menu.lua',
     'client/lifesystem/armurerie/menu.lua',
+    'client/lifesystem/spawnManager/_function.lua',
+    'client/lifesystem/spawnManager/menu.lua',
     'client/lifesystem/interaction/_function.lua',
     'client/lifesystem/interaction/menu.lua',
+    'client/lifesystem/me/main.lua',
     'client/lifesystem/_function.lua',
+    'client/lifesystem/main.lua',
     'client/lifesystem/zone_manager.lua',
+}
+
+server_scripts {
+    'server/utils/_function.lua',
+
+    'server/lifesystem/me.lua',
+    'server/lifesystem/playerJoined.lua'   
 }
