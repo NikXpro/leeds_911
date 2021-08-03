@@ -76,15 +76,23 @@ function startSpawnManagerMenu()
                     for _, group in pairs(Config.groupList) do
                         if group.Label == cat.Label then
                             for _, area in pairs(group.AreaList) do
-                                RageUI.Button(area.Label, nil, {RightLabel = LEEDS.Emoticon.Plus}, true, {
-                                    onActive = function()
-                                        dictionary = area.Texture
-                                    end,
-                                    onSelected = function()
-                                        TriggerEvent('leeds:characterSelected', area.Coords)
-                                        RageUI.CloseAll()
-                                    end
-                                });
+                                if area.Activate then
+                                    RageUI.Button(area.Label, nil, {RightLabel = LEEDS.Emoticon.Plus}, true, {
+                                        onActive = function()
+                                            dictionary = area.Texture
+                                        end,
+                                        onSelected = function()
+                                            TriggerEvent('leeds:characterSelected', area.Coords)
+                                            RageUI.CloseAll()
+                                        end
+                                    });
+                                else
+                                    RageUI.Button(area.Label, nil, {}, false, {
+                                        onActive = function()
+                                            dictionary = area.Texture
+                                        end
+                                    });
+                                end 
                             end
                         end
                     end

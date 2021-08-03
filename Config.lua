@@ -13,8 +13,8 @@ Config.groupList = {
         Ped = "s_m_y_cop_01",
         Texture = "lspd",
         AreaList = {
-            {Label = "Mission Row", Texture = "mrpd", Coords = vector3(455.34024047852, -991.51263427734, 30.689617156982)},
-            {Label = "Vespucci", Texture = "vpd", Coords = vector3(-1058.2274169922, -840.49920654297, 5.0424575805664)}
+            {Label = "Mission Row", Texture = "mrpd", Activate = true, Coords = vector3(455.34024047852, -991.51263427734, 30.689617156982)},
+            {Label = "Vespucci", Texture = "vpd", Activate = false, Coords = vector3(-1058.2274169922, -840.49920654297, 5.0424575805664)}
         }
     },
     {
@@ -22,7 +22,7 @@ Config.groupList = {
         Ped = "s_m_m_paramedic_01",
         Texture = "lsfd",
         AreaList = {
-            {Label = "MRPD", Description = "", Texture = "", Coords = vector3(-449.75180053711, 6010.6264648438, 30.716396331787)}
+            {Label = "MRPD", Description = "", Texture = "", Activate = true, Coords = vector3(-449.75180053711, 6010.6264648438, 30.716396331787)}
         }
     },
     {
@@ -30,7 +30,7 @@ Config.groupList = {
         Ped = "s_m_m_paramedic_01",
         Texture = "shopui_title_gr_gunmod",
         AreaList = {
-            {Label = "MRPD", Description = "", Texture = "", Coords = vector3(-449.75180053711, 6010.6264648438, 30.716396331787)}
+            {Label = "MRPD", Description = "", Texture = "", Activate = true, Coords = vector3(-449.75180053711, 6010.6264648438, 30.716396331787)}
         }
     }
 }
