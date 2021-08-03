@@ -8,7 +8,8 @@ data.vestiaireList = {
             ZoneSize = 1.5,
             Banner = {Dictionary = "banner", Texture = "BCSO"},
             Position = vector3(-449.95544433594, 6016.03515625, 30.716394424438),
-            Ped = {Activate = true, PedName = "s_m_y_ranger_01", Heading = 310.01}
+            Ped = {Activate = true, PedName = "s_m_y_ranger_01", Heading = 310.01},
+            Blip = {Activate = true, Type = "", BlipName = "LSSO", BlipId = 60, BlipColor = 16, BlipScale = 0.8}
         },
         TenuList = {
             {Label = "Uniforme LSSO Homme #1", RightEmoticon = "♂️", PedName = "s_m_y_ranger_01"},

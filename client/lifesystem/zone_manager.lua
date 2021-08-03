@@ -11,6 +11,25 @@ Citizen.CreateThread(function()
             end
         end
     end
+    for cat, _ in pairs(data) do
+        if cat == "vestiaireList" then
+            for _, v in pairs(data[cat]) do
+                if v.Settings.Blip.Activate then
+                    local blip = AddBlipForCoord(vector3(v.Settings.Position[1], v.Settings.Position[2], v.Settings.Position[3]))
+                    SetBlipSprite(blip, v.Settings.Blip.BlipId)
+                    SetBlipScale(blip, v.Settings.Blip.BlipScale)
+                    SetBlipColour(blip, v.Settings.Blip.BlipColor)
+                    SetBlipAsShortRange(blip, true)
+                    if v.Settings.Blip.Type ~= "" then
+                         SetBlipCategory(blip, v.Settings.Blip.Type)
+                    end
+                    BeginTextCommandSetBlipName('STRING')
+                    AddTextComponentString(v.Settings.Blip.BlipName)
+                    EndTextCommandSetBlipName(blip)
+                end
+            end
+        end
+    end
 end)
 
 Citizen.CreateThread(function()
