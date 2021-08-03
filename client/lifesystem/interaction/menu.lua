@@ -1,16 +1,4 @@
-data.pedsList = {
-    {
-        catLabel = "LSPD",
-        catPedsList = {
-            {label = "1", hash = "a_f_m_beach_01"},
-            {label = "2", hash = "a_f_m_bevhills_01"},
-            {label = "3", hash = "a_f_m_bevhills_02"},
-            {label = "4", hash = "a_f_m_bodybuild_0"},
-            {label = "5", hash = "a_f_m_business_02"},
-            {label = "6", hash = "a_f_m_downtown_01"},
-        }
-    },
-}
+
 
 
 local interactionMenu = RageUI.CreateMenu("Interaction", "Interaction")
@@ -35,7 +23,7 @@ Citizen.CreateThread(function()
     table.insert(categorie.loadout, v)
   end
   for k,v in pairs(data.pedsList) do
-    RMenu.Add(pedsMenu, v.catLabel, RageUI.CreateSubMenu(pedsMenu, "", v.catLabel))
+    RMenu.Add(pedsMenu, v.name, RageUI.CreateSubMenu(pedsMenu, "", v.name))
     table.insert(categorie.peds, v)
   end
 end)
@@ -88,7 +76,7 @@ Citizen.CreateThread(function()
             attente = 6
             RageUI.IsVisible(pedsMenu, function()
                 for _, v in pairs(categorie.peds) do 
-                    RageUI.Button(v.catLabel, nil, {RightLabel = "🔎"}, true, {onSelected = function() end}, RMenu:Get(pedsMenu, v.catLabel));     
+                    RageUI.Button(v.name, nil, {RightLabel = "🔎"}, true, {onSelected = function() end}, RMenu:Get(pedsMenu, v.name));     
                 end
             end, function()
             end)
@@ -152,12 +140,12 @@ Citizen.CreateThread(function()
         end
 
         for _, b in pairs(categorie.peds) do
-            if RageUI.Visible(RMenu:Get(pedsMenu, b.catLabel)) then
+            if RageUI.Visible(RMenu:Get(pedsMenu, b.name)) then
                 attente = 5
-                RageUI.IsVisible(RMenu:Get(pedsMenu, b.catLabel), function()
+                RageUI.IsVisible(RMenu:Get(pedsMenu, b.name), function()
                     for _, d in pairs(data.pedsList) do
-                        if d.catLabel == b.catLabel then
-                            for _, f in pairs(d.catPedsList) do
+                        if d.name == b.name then
+                            for _, f in pairs(d.list) do
                                 RageUI.Button(f.label, nil, {RightLabel = "~b~("..f.hash..")"}, true, {
                                     onSelected = function()
                                         local playerId = PlayerId()
