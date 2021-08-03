@@ -63,9 +63,9 @@ function Visual.ShowAdvancedNotification(sender, subject, msg, textureDict, icon
 	EndTextCommandThefeedPostTicker(flash or false, saveToBrief)
 end
 
-function Visual.ShowFloatingHelpNotification(msg, coords)
+function Visual.ShowFloatingHelpNotification(msg, x, y, z)
 	AddTextEntry('FloatingHelpNotification', msg)
-	SetFloatingHelpTextWorldPosition(1, coords)
+	SetFloatingHelpTextWorldPosition(1, x, y, z)
 	SetFloatingHelpTextStyle(1, 1, 2, -1, 3, 0)
 	BeginTextCommandDisplayHelp('FloatingHelpNotification')
 	EndTextCommandDisplayHelp(2, false, false, -1)
@@ -81,4 +81,26 @@ function Visual.ShowHelpNotification(msg, thisFrame, beep, duration)
 		BeginTextCommandDisplayHelp('HelpNotification')
 		EndTextCommandDisplayHelp(0, false, beep, duration or -1)
 	end
+end
+
+function Visual.Draw3DText(x, y, z, textInput, fontId, scaleX, scaleY)
+	local px,py,pz=table.unpack(GetGameplayCamCoords())
+	local dist = GetDistanceBetweenCoords(px,py,pz, x,y,z, 1)    
+	local scale = (1/dist)*20
+	local fov = (1/GetGameplayCamFov())*100
+	local scale = scale*fov   
+	SetTextScale(scaleX*scale, scaleY*scale)
+	SetTextFont(fontId)
+	SetTextProportional(1)
+	SetTextColour(250, 250, 250, 255)
+	SetTextDropshadow(1, 1, 1, 1, 255)
+	SetTextEdge(2, 0, 0, 0, 150)
+	SetTextDropShadow()
+	SetTextOutline()
+	SetTextEntry("STRING")
+	SetTextCentre(1)
+	AddTextComponentString(textInput)
+	SetDrawOrigin(x,y,z+2, 0)
+	DrawText(0.0, 0.0)
+	ClearDrawOrigin()
 end
