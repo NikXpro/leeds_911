@@ -63,12 +63,21 @@ client_scripts {
     'client/lifesystem/interaction/_function.lua',
     'client/lifesystem/interaction/menu.lua',
     'client/lifesystem/me/main.lua',
+    'client/lifesystem/hud/main.lua',
     'client/lifesystem/_function.lua',
     'client/lifesystem/main.lua',
     'client/lifesystem/zone_manager.lua',
 }
 
 server_scripts {
+    'data/data_loadout.lua',
+    'data/data_peds.lua',
+    'data/data_vehicle.lua',
+    'data/data_garage.lua',
+    'data/data_vestiaire.lua',
+    'data/data_armurerie.lua',
+
+    'Config.lua',
     'server/utils/_function.lua',
 
     'server/lifesystem/me.lua',
