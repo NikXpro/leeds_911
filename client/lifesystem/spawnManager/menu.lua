@@ -4,7 +4,9 @@ local spawnManagerIsActif = false
 
 RegisterNetEvent('leeds:playerSpawned')
 AddEventHandler('leeds:playerSpawned', function()
-    startSpawnManagerScene()
+    if not Config.debug then
+        startSpawnManagerScene()
+    end
 end)
 
 RegisterNetEvent('leeds:characterSelected')

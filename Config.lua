@@ -1,5 +1,7 @@
 Config = {}
 
+Config.debug = true
+
 Config.spawnAnim = {
     {type = "anim", lib = "anim@heists@heist_corona@single_team", anim = "single_team_loop_boss", flag = 1},
     {type = "anim", lib = "random@street_race", anim = "_car_b_lookout", flag = 1},
