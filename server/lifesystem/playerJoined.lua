@@ -12,6 +12,17 @@ AddEventHandler('leeds:playerJoined', function()
     playerJoined(src_)
 end)
 
+RegisterNetEvent('leeds:characterSelected')
+AddEventHandler('leeds:characterSelected', function(catId, areaId)
+    local src_ = source
+    if Config.groupList[catId].AreaList[areaId] then
+        LEEDS.PlayerList[src_].Role = Config.groupList[catId].Role
+        SetEntityCoords(GetPlayerPed(src_), Config.groupList[catId].AreaList[areaId].Coords, false, false, false, true)
+        print('^2[SELECT] ^5'..LEEDS.PlayerList[src_].userName..'^2 vient de rejoindre ^5"'.. LEEDS.PlayerList[src_].Role ..'"^7')
+        TriggerClientEvent('leeds:characterSelect', src_)
+    end
+end)
+
 function playerJoined(src_)
     print("^2[CONNECT] ^5"..LEEDS.PlayerList[src_].userName.." ^2 vient de rejoindre le serveur !^7")
     TriggerClientEvent('leeds:playerSpawned', src_)

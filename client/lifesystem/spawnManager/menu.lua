@@ -1,6 +1,6 @@
 local categorie = {}
 local spawnManagerIsActif = false
-
+LEEDS.PlayerData = {}
 
 RegisterNetEvent('leeds:playerSpawned')
 AddEventHandler('leeds:playerSpawned', function()
@@ -9,10 +9,9 @@ AddEventHandler('leeds:playerSpawned', function()
     end
 end)
 
-RegisterNetEvent('leeds:characterSelected')
-AddEventHandler('leeds:characterSelected', function(coords)
+RegisterNetEvent('leeds:characterSelect')
+AddEventHandler('leeds:characterSelect', function()
     local playerId = PlayerPedId()
-    SetEntityCoords(playerId, coords, false, false, false, true)
     ClearPedTasksImmediately(playerId)
     ClearPedTasks(playerId)
     SetEntityInvincible(playerId, false)
@@ -68,7 +67,7 @@ function startSpawnManagerMenu()
                 end
             end)
         end
-        for _, cat in pairs(categorie) do
+        for catId, cat in pairs(categorie) do
             if RageUI.Visible(RMenu:Get(spawnManagerMenu, cat.Label)) then
                 wait = 5
                 RMenu:Get(spawnManagerMenu, cat.Label):SetSpriteBanner("banner", cat.Texture)
@@ -77,14 +76,15 @@ function startSpawnManagerMenu()
                     RageUI.Separator("SÉLECTIONNER VOTRE DÉPARTEMENT")
                     for _, group in pairs(Config.groupList) do
                         if group.Label == cat.Label then
-                            for _, area in pairs(group.AreaList) do
+                            for areaId, area in pairs(group.AreaList) do
                                 if area.Activate then
                                     RageUI.Button(area.Label, nil, {RightLabel = LEEDS.Emoticon.Plus}, true, {
                                         onActive = function()
                                             dictionary = area.Texture
                                         end,
                                         onSelected = function()
-                                            TriggerEvent('leeds:characterSelected', area.Coords)
+                                            LEEDS.PlayerData.Role = cat.Role
+                                            TriggerServerEvent('leeds:characterSelected', catId, areaId)
                                             RageUI.CloseAll()
                                         end
                                     });

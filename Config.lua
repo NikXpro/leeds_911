@@ -1,6 +1,8 @@
 Config = {}
 
-Config.debug = true
+Config.debug = false
+
+Config.speedometer = "KMH"
 
 Config.spawnAnim = {
     {type = "anim", lib = "anim@heists@heist_corona@single_team", anim = "single_team_loop_boss", flag = 1},
@@ -12,6 +14,7 @@ Config.spawnAnim = {
 Config.groupList = {
     {
         Label = "Police",
+        Role = "police",
         Ped = "s_m_y_cop_01",
         Texture = "lspd",
         AreaList = {
@@ -21,6 +24,7 @@ Config.groupList = {
     },
     {
         Label = "Secour",
+        Role = "ambulance",
         Ped = "s_m_m_paramedic_01",
         Texture = "lsfd",
         AreaList = {
@@ -29,6 +33,7 @@ Config.groupList = {
     },
     {
         Label = "Civil",
+        Role = "civil",
         Ped = "s_m_m_paramedic_01",
         Texture = "shopui_title_gr_gunmod",
         AreaList = {
