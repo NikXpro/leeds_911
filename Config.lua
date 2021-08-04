@@ -1,6 +1,7 @@
 Config = {}
 
 Config.debug = false
+Config.interactMenu = false
 
 Config.speedometer = "KMH"
 

@@ -58,22 +58,23 @@ function CreateInteractionMenu()
 end
 
 
-
-Keys.Register('F6', 'F6', 'Menu interaction.', function()
-    closestPlayer, closestDistance = LEEDS.Other.GetClosestPlayer()
-    --if closestPlayer ~= -1 and closestDistance <= 3.0 then
-        if LEEDS.PlayerData.Role == "police" then
-            interactionMenu:SetSpriteBanner("banner", "lspd")
-            interactionMenu:SetSubtitle("interaction police")
-        elseif LEEDS.PlayerData.Role == "ambulance" then
-            interactionMenu:SetSpriteBanner("banner", "lsfd")
-            interactionMenu:SetSubtitle("interaction secour")
-        elseif LEEDS.PlayerData.Role == "civil" then
-            interactionMenu:SetSpriteBanner("banner", "lsfd")
-            interactionMenu:SetSubtitle("interaction civil")
-        end
-        CreateInteractionMenu()
-    --else
-    --    LEEDS.Visual.ShowNotification("Aucun joueur a proximité !")
-    --end
-end)
+if Config.interactMenu then
+    Keys.Register('F6', 'F6', 'Menu interaction.', function()
+        closestPlayer, closestDistance = LEEDS.Other.GetClosestPlayer()
+        --if closestPlayer ~= -1 and closestDistance <= 3.0 then
+            if LEEDS.PlayerData.Role == "police" then
+                interactionMenu:SetSpriteBanner("banner", "lspd")
+                interactionMenu:SetSubtitle("interaction police")
+            elseif LEEDS.PlayerData.Role == "ambulance" then
+                interactionMenu:SetSpriteBanner("banner", "lsfd")
+                interactionMenu:SetSubtitle("interaction secour")
+            elseif LEEDS.PlayerData.Role == "civil" then
+                interactionMenu:SetSpriteBanner("banner", "lsfd")
+                interactionMenu:SetSubtitle("interaction civil")
+            end
+            CreateInteractionMenu()
+        --else
+        --    LEEDS.Visual.ShowNotification("Aucun joueur a proximité !")
+        --end
+    end)
+end
