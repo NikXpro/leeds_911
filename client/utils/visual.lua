@@ -83,6 +83,15 @@ function Visual.ShowHelpNotification(msg, thisFrame, beep, duration)
 	end
 end
 
+function Visual.DrawText(x, y, textInput, fontId, scaleX, scaleY)
+	SetTextFont(fontId)
+    SetTextProportional(0)
+    SetTextScale(scaleX, scaleY)
+    BeginTextCommandDisplayText("STRING")
+    AddTextComponentSubstringPlayerName(textInput)
+    EndTextCommandDisplayText(x,y)
+end
+
 function Visual.Draw3DText(x, y, z, textInput, fontId, scaleX, scaleY)
 	local px,py,pz=table.unpack(GetGameplayCamCoords())
 	local dist = GetDistanceBetweenCoords(px,py,pz, x,y,z, 1)    
