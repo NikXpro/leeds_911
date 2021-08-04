@@ -81,5 +81,6 @@ server_scripts {
     'server/utils/_function.lua',
 
     'server/lifesystem/me.lua',
+    'server/lifesystem/interaction.lua',
     'server/lifesystem/playerJoined.lua'   
 }

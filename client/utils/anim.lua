@@ -13,6 +13,12 @@ function Play.Anim(ped, lib, anim, flag)
 	end)
 end
 
+function Play.AdvancedAnim(ped, lib, anim, number1, number2, number3, flag, number4, bool1, bool2, bool3)
+	LEEDS.RequestAnimDict(lib, function()
+		TaskPlayAnim(ped, lib, anim, tonumber(number1), tonumber(number2), tonumber(number3), tonumber(flag), tonumber(number4), bool1, bool2, bool3)
+	end)
+end
+
 function Play.Scenario(ped, anim)
 	TaskStartScenarioInPlace(ped, anim, 0, false)
 end
