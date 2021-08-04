@@ -2,8 +2,8 @@ data.vehicleList = {
     {
         catLabel = "Civil",
         catVehicleList = {
-            {name = "asbo", label = "Asbo"},
-            {name = "blista", label = "Blista"},
+            {name = "asbo", label = "dAsbo"},
+            {name = "blista", label = "Bldista"},
             {name = "brioso", label = "Brioso"}
         }
     },

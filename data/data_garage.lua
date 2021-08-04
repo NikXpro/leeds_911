@@ -1,19 +1,19 @@
 data.garageList = {
     {
-        MenuId = "BCSO",
+        MenuId = "LSSD",
         Settings = {
             TitleMenu = "",
-            SubTitleMenu = "Garage MRPD",
-            ZoneMessage = "Press ~INPUT_CONTEXT~ pour ouvrir le garage",
+            SubTitleMenu = "Garage LSSD",
+            ZoneMessage = "Appuyer sur ~INPUT_CONTEXT~ pour ouvrir le garage",
             ZoneSize = 1.5,
-            Banner = {Dictionary = "banner", Texture = "BCSO"},
+            Banner = {Dictionary = "banner", Texture = "lspd"},
             Position = vector3(-449.61730957031, 6003.9799804688, 30.49010848999),
-            Ped = {Activate = true, PedName = "s_m_y_ranger_01", Heading = 126.62908935546876}
+            Ped = {Activate = true, PedName = "s_m_y_sheriff_01", Heading = 126.62908935546876}
         },
         DeleterPoint = {
             Position = vector3(-468.84625244141, 6019.1430664062, 30.340553283691),
             ZoneSize = 4.5,
-            ZoneMessage = "Press ~INPUT_CONTEXT~ pour rentrer le vehicule dans le garage"
+            ZoneMessage = "Appuyer sur ~INPUT_CONTEXT~ pour rentrer le vehicule dans le garage"
         },
         SpawnPoints = {
             { pos = vector3(-482.5964050293,6024.8706054688,31.340551376343), heading = 231.07778930664},
@@ -31,23 +31,27 @@ data.garageList = {
         }
     },
     {
-        MenuId = "MRPD",
+        MenuId = "LSPD",
         Settings = {
             TitleMenu = "",
-            SubTitleMenu = "Garage MRPD",
-            ZoneMessage = "Press ~INPUT_CONTEXT~ pour ouvrir le garage",
+            SubTitleMenu = "Garage LSPD",
+            ZoneMessage = "Appuyer sur ~INPUT_CONTEXT~ pour ouvrir le garage",
             ZoneSize = 1.5,
             Banner = {Dictionary = "banner", Texture = "lspd"},
             Position = vector3(459.08197021484, -1017.1141967773, 27.151100158691),
-            Ped = {Activate = true, PedName = "s_m_y_ranger_01", Heading = 96.8994140625}
+            Ped = {Activate = true, PedName = "s_m_y_cop_01", Heading = 96.8994140625}
         },
         DeleterPoint = {
-            Position = vector3(-468.84625244141, 6019.1430664062, 30.340553283691),
+            Position = vector3(456.31402587891, -1017.4040527344, 27.398015975952),
             ZoneSize = 4.5,
-            ZoneMessage = "Press ~INPUT_CONTEXT~ pour rentrer le vehicule dans le garage"
+            ZoneMessage = "Appuyer sur ~INPUT_CONTEXT~ pour rentrer le vehicule dans le garage"
         },
         SpawnPoints = {
-            { pos = vector3(-482.5964050293,6024.8706054688,31.340551376343), heading = 231.07778930664},
+           { pos = vector3(446.08596801758,-1026.0086669922,28.647966384888), heading = 348.05746459961},
+           { pos = vector3(442.50015258789,-1026.3876953125,28.7154712677), heading = 5.4512419700623},
+           { pos = vector3(438.78497314453,-1027.1968994141,28.785760879517), heading = 7.4895009994507},
+           { pos = vector3(434.8776550293,-1027.3218994141,28.854543685913), heading = 7.9458661079407},
+           { pos = vector3(431.50695800781,-1027.6596679688,28.915742874146), heading = 4.2442054748535},
         },
         VehiculeList = {
             {vehiculeLabel = "Sheriff Stanier",vehiculeName = "sheriff"},

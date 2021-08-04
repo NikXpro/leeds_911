@@ -1,14 +1,14 @@
 data.armurerieList = {
     {
-        MenuId = "LSSO",
+        MenuId = "LSSD",
         Settings = {
             TitleMenu = "",
-            SubTitleMenu = "Armurerie BCSO",
+            SubTitleMenu = "Armurerie LSSD",
             ZoneMessage = "Press ~INPUT_CONTEXT~ pour demander votre equipement",
             ZoneSize = 1.5,
-            Banner = {Dictionary = "banner", Texture = "BCSO"},
+            Banner = {Dictionary = "banner", Texture = "lspd"},
             Position = vector3(-449.75180053711, 6010.6264648438, 30.716396331787),
-            Ped = {Activate = true, PedName = "s_m_y_ranger_01", Heading = 314.5}
+            Ped = {Activate = true, PedName = "s_m_y_sheriff_01", Heading = 314.5}
         },
         WeaponList = {
             {Label = "Pistolet", RightEmoticon = "➕", WeaponName = "weapon_pistol", Ammo = 100},
@@ -16,7 +16,7 @@ data.armurerieList = {
         }
     },
     {
-        MenuId = "MRPD",
+        MenuId = "LSPD",
         Settings = {
             TitleMenu = "",
             SubTitleMenu = "Armurerie LSPD",
@@ -24,7 +24,7 @@ data.armurerieList = {
             ZoneSize = 2.5,
             Banner = {Dictionary = "banner", Texture = "lspd"},
             Position = vector3(454.04510498047, -980.04852294922, 29.689586639404),
-            Ped = {Activate = true, PedName = "s_m_y_ranger_01", Heading = 91.4864730834961}
+            Ped = {Activate = true, PedName = "s_m_y_cop_01", Heading = 91.4864730834961}
         },
         WeaponList = {
             {Label = "Pistolet", RightEmoticon = "➕", WeaponName = "weapon_pistol", Ammo = 100},
