@@ -13,31 +13,33 @@ Config.spawnAnim = {
 
 Config.groupList = {
     {
-        Label = "Police",
+        Label = "Law Enforcement",
         Role = "police",
         Ped = "s_m_y_cop_01",
         Texture = "lspd",
         AreaList = {
-            {Label = "Mission Row", Texture = "mrpd", Activate = true, Coords = vector3(455.34024047852, -991.51263427734, 30.689617156982)},
-            {Label = "Vespucci", Texture = "vpd", Activate = false, Coords = vector3(-1058.2274169922, -840.49920654297, 5.0424575805664)}
+            {Label = "LSPD", Texture = "mrpd", Activate = true, Coords = vector3(455.34024047852, -991.51263427734, 30.689617156982)},
+            {Label = "LSSD", Texture = "mrpd", Activate = true, Coords = vector3(-437.11752319336, 6020.279296875, 31.490112304688)}
         }
     },
     {
-        Label = "Secour",
+        Label = "Fire & Rescue",
         Role = "ambulance",
         Ped = "s_m_m_paramedic_01",
         Texture = "lsfd",
         AreaList = {
-            {Label = "MRPD", Description = "", Texture = "", Activate = true, Coords = vector3(-449.75180053711, 6010.6264648438, 30.716396331787)}
+            {Label = "LSFD", Description = "", Texture = "mrpd", Activate = true, Coords = vector3(219.51557922363, -1645.0241699219, 29.677095413208)},
+           {Label = "LSCoFD", Description = "", Texture = "mrpd", Activate = true, Coords = vector3(1691.7346191406, 3580.4772949219, 35.596828460693)}
         }
     },
     {
-        Label = "Civil",
+        Label = "Civilian",
         Role = "civil",
-        Ped = "s_m_m_paramedic_01",
+        Ped = "a_m_m_afriamer_01",
         Texture = "shopui_title_gr_gunmod",
         AreaList = {
-            {Label = "MRPD", Description = "", Texture = "", Activate = true, Coords = vector3(-449.75180053711, 6010.6264648438, 30.716396331787)}
+            {Label = "Los Santos County", Description = "", Texture = "mrpd", Activate = true, Coords = vector3(1959.1683349609, 3732.5795898438, 32.226196289062)},
+            {Label = "Los Santos City", Description = "", Texture = "mrpd", Activate = true, Coords = vector3(-1604.7893066406, -956.60559082031, 13.016840934753)}
         }
     }
 }
