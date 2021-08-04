@@ -1,6 +1,6 @@
 data.garageList = {
     {
-        MenuId = "LSPD",
+        MenuId = "BCSO",
         Settings = {
             TitleMenu = "",
             SubTitleMenu = "Garage MRPD",
@@ -28,6 +28,29 @@ data.garageList = {
         VehiculeList = {
             {vehiculeLabel = "Sheriff Stanier",vehiculeName = "sheriff"},
             {vehiculeLabel = "Sheriff Granger",vehiculeName = "sheriff2"},
+        }
+    },
+    {
+        MenuId = "MRPD",
+        Settings = {
+            TitleMenu = "",
+            SubTitleMenu = "Garage MRPD",
+            ZoneMessage = "Press ~INPUT_CONTEXT~ pour ouvrir le garage",
+            ZoneSize = 1.5,
+            Banner = {Dictionary = "banner", Texture = "lspd"},
+            Position = vector3(459.08197021484, -1017.1141967773, 27.151100158691),
+            Ped = {Activate = true, PedName = "s_m_y_ranger_01", Heading = 96.8994140625}
+        },
+        DeleterPoint = {
+            Position = vector3(-468.84625244141, 6019.1430664062, 30.340553283691),
+            ZoneSize = 4.5,
+            ZoneMessage = "Press ~INPUT_CONTEXT~ pour rentrer le vehicule dans le garage"
+        },
+        SpawnPoints = {
+            { pos = vector3(-482.5964050293,6024.8706054688,31.340551376343), heading = 231.07778930664},
+        },
+        VehiculeList = {
+            {vehiculeLabel = "Sheriff Stanier",vehiculeName = "sheriff"},
         }
     }
 }
