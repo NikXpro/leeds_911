@@ -17,8 +17,10 @@ AddEventHandler('leeds:meSyncC', function(text, serverId)
 	end
 end)
 
-LEEDS.Keys.Register('T', 'T', 'Fait un /me', false, function()
-    Wait(250)
-    local text = KeyboardInput("Texte de votre ~g~/me", "", 50)
-    TriggerServerEvent('leeds:meSyncS', "* La personne "..text.." *")
-end)
+if Config.me then
+	LEEDS.Keys.Register('T', 'T', 'Fait un /me', false, function()
+		Wait(250)
+		local text = KeyboardInput("Texte de votre ~g~/me", "", 50)
+		TriggerServerEvent('leeds:meSyncS', "* La personne " .. text .. " *")
+	end)
+end
