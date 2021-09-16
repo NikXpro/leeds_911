@@ -1,40 +1,40 @@
 data.garageList = {
     {
-        MenuId = "LSSD",
+        MenuId = "DSFD",
         Settings = {
             TitleMenu = "",
-            SubTitleMenu = "Garage LSSD",
+            SubTitleMenu = "Garage F&R",
             ZoneMessage = "Appuyer sur ~INPUT_CONTEXT~ pour ouvrir le garage",
             ZoneSize = 1.5,
-            Banner = {Dictionary = "banner", Texture = "lspd"},
-            Position = vector3(-449.61730957031, 6003.9799804688, 30.49010848999),
-            Ped = {Activate = true, PedName = "s_m_y_sheriff_01", Heading = 126.62908935546876}
+            Banner = {Dictionary = "banner", Texture = "lsfd"},
+            Position = vector3(215.01309204102, -1651.5227050781, 28.803216934204),
+            Ped = {Activate = true, PedName = "s_m_y_fireman_01", Heading = 41.681396484375}
         },
         DeleterPoint = {
-            Position = vector3(-468.84625244141, 6019.1430664062, 30.340553283691),
+            Position = vector3(215.01309204102, -1651.5227050781, 28.803216934204),
             ZoneSize = 4.5,
             ZoneMessage = "Appuyer sur ~INPUT_CONTEXT~ pour rentrer le vehicule dans le garage"
         },
         SpawnPoints = {
-            { pos = vector3(-482.5964050293,6024.8706054688,31.340551376343), heading = 231.07778930664},
-            { pos = vector3(-479.39752197266,6027.73828125,31.340551376343), heading = 231.41006469727},
-            { pos = vector3(-475.69668579102,6031.6743164062,31.340551376343), heading = 220.23754882812},
-            { pos = vector3(-472.43255615234,6035.4516601562,31.340551376343), heading = 233.31307983398},
-            { pos = vector3(-468.71588134766,6038.7094726562,31.340551376343), heading = 222.35475158691},
-            { pos = vector3(-454.88598632812,6001.9892578125,31.340553283691), heading = 91.969161987305},
-            { pos = vector3(-451.42398071289,5998.1782226562,31.340553283691), heading = 85.128646850586},
-            { pos = vector3(-447.92626953125,5994.375,31.340553283691), heading = 85.618339538574}
+            { pos = vector3(212.25637817383,-1637.1722412109,29.603244781494), heading = 318.94476318359},
         },
         VehiculeList = {
-            {vehiculeLabel = "Sheriff Stanier",vehiculeName = "sheriff"},
-            {vehiculeLabel = "Sheriff Granger",vehiculeName = "sheriff2"},
+            {vehiculeLabel = "lsfd",vehiculeName = "lsfd"},
+            {vehiculeLabel = "lsfd2",vehiculeName = "lsfd2"},
+            {vehiculeLabel = "lsfd3",vehiculeName = "lsfd3"},
+            {vehiculeLabel = "lsfd4",vehiculeName = "lsfd4"},
+            {vehiculeLabel = "lsfd5",vehiculeName = "lsfd5"},
+            {vehiculeLabel = "lsfdtruck2",vehiculeName = "lsfdtruck2"},
+            {vehiculeLabel = "lsfdtruck",vehiculeName = "lsfdtruck"},
+            {vehiculeLabel = "lsfdtruck3",vehiculeName = "lsfdtruck3"},
+            {vehiculeLabel = "emsnspeedo",vehiculeName = "emsnspeedo"},
         }
     },
     {
-        MenuId = "LSPD",
+        MenuId = "MRPD",
         Settings = {
             TitleMenu = "",
-            SubTitleMenu = "Garage LSPD",
+            SubTitleMenu = "Garage Law Enforcement",
             ZoneMessage = "Appuyer sur ~INPUT_CONTEXT~ pour ouvrir le garage",
             ZoneSize = 1.5,
             Banner = {Dictionary = "banner", Texture = "lspd"},
@@ -42,19 +42,72 @@ data.garageList = {
             Ped = {Activate = true, PedName = "s_m_y_cop_01", Heading = 96.8994140625}
         },
         DeleterPoint = {
-            Position = vector3(456.31402587891, -1017.4040527344, 27.398015975952),
+            Position = vector3(215.01309204102, -1651.5227050781, 28.803216934204),
             ZoneSize = 4.5,
             ZoneMessage = "Appuyer sur ~INPUT_CONTEXT~ pour rentrer le vehicule dans le garage"
         },
         SpawnPoints = {
-           { pos = vector3(446.08596801758,-1026.0086669922,28.647966384888), heading = 348.05746459961},
-           { pos = vector3(442.50015258789,-1026.3876953125,28.7154712677), heading = 5.4512419700623},
-           { pos = vector3(438.78497314453,-1027.1968994141,28.785760879517), heading = 7.4895009994507},
-           { pos = vector3(434.8776550293,-1027.3218994141,28.854543685913), heading = 7.9458661079407},
-           { pos = vector3(431.50695800781,-1027.6596679688,28.915742874146), heading = 4.2442054748535},
+            { pos = vector3(454.52520751953,-1021.1937866211,28.3421459198), heading = 94.488540649414},
         },
         VehiculeList = {
-            {vehiculeLabel = "Sheriff Stanier",vehiculeName = "sheriff"},
+            {vehiculeLabel = "pscout",vehiculeName = "pscout"},
+            {vehiculeLabel = "pscoutnew",vehiculeName = "pscoutnew"},
+            {vehiculeLabel = "police3",vehiculeName = "police3"},
+            {vehiculeLabel = "police",vehiculeName = "police"},
+            {vehiculeLabel = "police2",vehiculeName = "police2"},
+            {vehiculeLabel = "polalamo",vehiculeName = "polalamo"},
+            {vehiculeLabel = "police4",vehiculeName = "police4"},
+            {vehiculeLabel = "sheriff",vehiculeName = "sheriff"},
+            {vehiculeLabel = "sheriff2",vehiculeName = "sheriff2"},
+            {vehiculeLabel = "sheriffalamo",vehiculeName = "sheriffalamo"},
+            {vehiculeLabel = "sheriffscoutnew",vehiculeName = "sheriffscoutnew"},
+            {vehiculeLabel = "sheriffscout",vehiculeName = "sheriffscout"},
+            {vehiculeLabel = "sherifffugg",vehiculeName = "sherifffugg"},
+            {vehiculeLabel = "sheriffoss",vehiculeName = "sheriffoss"},
+            {vehiculeLabel = "sheriffroamer",vehiculeName = "sheriffroamer"},
+            {vehiculeLabel = "sheriffstalker",vehiculeName = "sheriffstalker"},
+            {vehiculeLabel = "pranger",vehiculeName = "pranger"},
+            {vehiculeLabel = "prangerstanier",vehiculeName = "prangerstanier"},
+            {vehiculeLabel = "sahp2",vehiculeName = "sahp2"},
+            {vehiculeLabel = "sahp3",vehiculeName = "sahp3"},
+            {vehiculeLabel = "sahp4",vehiculeName = "sahp4"},
+            {vehiculeLabel = "sahp5",vehiculeName = "sahp5"},
+            {vehiculeLabel = "sahp6",vehiculeName = "sahp6"},
+            {vehiculeLabel = "fbi",vehiculeName = "fbi"},
+            {vehiculeLabel = "fbi2",vehiculeName = "fbi2"},
         }
-    }
+
+    },
+    {
+        MenuId = "SSFD",
+        Settings = {
+            TitleMenu = "",
+            SubTitleMenu = "Garage F&R",
+            ZoneMessage = "Appuyer sur ~INPUT_CONTEXT~ pour ouvrir le garage",
+            ZoneSize = 1.5,
+            Banner = {Dictionary = "banner", Texture = "lsfd"},
+            Position = vector3(1701.3846435547, 3586.4868164062, 35.482032775879),
+            Ped = {Activate = true, PedName = "s_m_y_fireman_01", Heading = 207.6074371337891}
+        },
+        DeleterPoint = {
+            Position = vector3(215.01309204102, -1651.5227050781, 28.803216934204),
+            ZoneSize = 4.5,
+            ZoneMessage = "Appuyer sur ~INPUT_CONTEXT~ pour rentrer le vehicule dans le garage"
+        },
+        SpawnPoints = {
+            { pos = vector3(1710.2427978516,3595.3000488281,35.421222686768), heading = 235.47766113281},
+        },
+        VehiculeList = {
+            {vehiculeLabel = "lsfd",vehiculeName = "lsfd"},
+            {vehiculeLabel = "lsfd2",vehiculeName = "lsfd2"},
+            {vehiculeLabel = "lsfd3",vehiculeName = "lsfd3"},
+            {vehiculeLabel = "lsfd4",vehiculeName = "lsfd4"},
+            {vehiculeLabel = "lsfd5",vehiculeName = "lsfd5"},
+            {vehiculeLabel = "lsfdtruck2",vehiculeName = "lsfdtruck2"},
+            {vehiculeLabel = "lsfdtruck",vehiculeName = "lsfdtruck"},
+            {vehiculeLabel = "lsfdtruck3",vehiculeName = "lsfdtruck3"},
+            {vehiculeLabel = "emsnspeedo",vehiculeName = "emsnspeedo"},
+        
+        }
+    },
 }
