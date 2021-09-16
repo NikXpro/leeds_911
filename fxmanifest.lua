@@ -49,6 +49,7 @@ client_scripts {
     'Config.lua',
     'client/utils/_function.lua',
     'client/utils/visual.lua',
+    'client/utils/string.lua',
     'client/utils/anim.lua',
     'client/utils/keys.lua',
     'client/utils/other.lua',
@@ -56,6 +57,7 @@ client_scripts {
     
     'client/lifesystem/garage/_function.lua',
     'client/lifesystem/garage/menu.lua',
+    'client/lifesystem/vestiaire/_function.lua',
     'client/lifesystem/vestiaire/menu.lua',
     'client/lifesystem/armurerie/menu.lua',
     'client/lifesystem/spawnManager/_function.lua',
