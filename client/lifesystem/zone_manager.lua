@@ -78,3 +78,26 @@ Citizen.CreateThread(function()
         Citizen.Wait(wait)
     end
 end)
+
+Citizen.CreateThread(function()
+    for cat, _ in pairs(data) do
+        if cat == "blipList" then
+            for _, v in pairs(data[cat]) do
+                if v.Activate then
+                    local blip = AddBlipForCoord(v.BlipPosition)
+                    SetBlipSprite(blip, v.BlipId)
+                    SetBlipScale(blip, v.BlipScale)
+                    SetBlipColour(blip, v.BlipColor)
+                    SetBlipAsShortRange(blip, true)
+                    SetBlipDisplay(blip, v.BlipDisplay)
+                    if v.BlipType ~= "" then
+                         SetBlipCategory(blip, v.BlipType)
+                    end
+                    BeginTextCommandSetBlipName('STRING')
+                    AddTextComponentString(v.BlipName)
+                    EndTextCommandSetBlipName(blip)
+                end
+            end
+        end
+    end
+end)

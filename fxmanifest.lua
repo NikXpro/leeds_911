@@ -45,6 +45,7 @@ client_scripts {
     'data/data_garage.lua',
     'data/data_vestiaire.lua',
     'data/data_armurerie.lua',
+    'data/data_blips.lua',
 
     'Config.lua',
     'client/utils/_function.lua',
@@ -78,6 +79,7 @@ server_scripts {
     'data/data_garage.lua',
     'data/data_vestiaire.lua',
     'data/data_armurerie.lua',
+    'data/data_blips.lua',
 
     'Config.lua',
     'server/utils/_function.lua',
