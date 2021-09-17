@@ -12,8 +12,8 @@ data.vestiaireList = {
             Blip = {Activate = true, Type = "", BlipName = "LSSD", BlipId = 60, BlipColor = 16, BlipScale = 0.8}
         },
         TenuList = {
-            {Label = "Uniforme LSSO Homme", RightEmoticon = "♂️", PedName = "s_m_y_sheriff_01"},
-            {Label = "Uniforme LSSO Femme", RightEmoticon = "♀️", PedName = "s_f_y_sheriff_01"}
+            {Label = "Uniforme LSSO Homme", RightEmoticon = "♂️", Type = "ped", PedName = "s_m_y_sheriff_01"},
+            {Label = "Uniforme LSSO Femme", RightEmoticon = "♀️", Type = "ped", PedName = "s_f_y_sheriff_01"}
         }
    },
    {
@@ -72,4 +72,5 @@ data.vestiaireList = {
         }
 
     }
+
 }
