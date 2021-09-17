@@ -2,7 +2,7 @@ Config = {}
 
 Config.debug = false
 Config.interactMenu = false
-Config.me = false --Active ou non le /me
+Config.meType = "command" --Vide = Désactiver, command = Marche aveec un /me, key = marche avec la touche "T"
 
 Config.speedometer = "KMH"
 
