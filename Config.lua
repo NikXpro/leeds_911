@@ -1,6 +1,8 @@
 Config = {}
 
 Config.debug = false
+
+Config.DefaultPermissions = '{"characterAutorized":2}'
 Config.interactMenu = false
 Config.meType = "command" --Vide = Désactiver, command = Marche aveec un /me, key = marche avec la touche "T"
 
