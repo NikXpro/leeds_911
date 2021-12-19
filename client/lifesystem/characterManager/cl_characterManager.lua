@@ -13,8 +13,8 @@ AddEventHandler('leeds:sendCharacterList', function(charactersList, userPermissi
 end)
 
 RegisterNetEvent('leeds:characterSelected')
-AddEventHandler('leeds:characterSelected', function(data)
-    print("test")
+AddEventHandler('leeds:characterSelected', function(data, type)
+    LEEDS.PlayerData.charType = type
     local playerId = PlayerPedId()
     ClearPedTasksImmediately(playerId)
     ClearPedTasks(playerId)
@@ -23,7 +23,6 @@ AddEventHandler('leeds:characterSelected', function(data)
     RenderScriptCams(false, false, 500, 1, 0)
     DestroyCam(cam)
     DisplayRadar(true)
-    print(data.model)
     LoadCharacter(data.model, data)
 end)
 
@@ -78,7 +77,7 @@ end
 LEEDS.Index = {
     features = {["eyebrow"] = {["height"] = 0.5, ["forward"] = 0.5},["eye"] = {["opening"] = 0.5},["nose"] = {["width"] = 0.5,["peakHeight"] = 0.5,["peakLength"] = 0.5,["peakLowering"] = 0.5,["boneHeight"] = 0.5,["boneTwist"] = 0.5},["cheeks"] = {["boneHeight"] = 0.5, ["boneWidth"] = 0.5},["lips"] = {["thickness"] = 0.5},["jaw"] = {["boneWidth"] = 0.5, ["boneBackLength"] = 0.5},["chimp"] = {["hole"] = 0.5, ["boneLength"] = 0.5, ["boneWidth"] = 0.5, ["boneLowering"] = 0.5}},apparence = {["hair"] = {["style"] = -1,["ColorPrimary"] = 1,["MinPrimary"] = 1,["ColorSecondary"] = 1,["MinSecondary"] = 1},["beard"] = {["style"] = -1,["opacity"] = 1.0,["ColorPrimary"] = 1,["MinPrimary"] = 1,["ColorSecondary"] = 1,["MinSecondary"] = 1},["eyebrows"] = {["style"] = -1,["opacity"] = 1.0,["ColorPrimary"] = 1,["MinPrimary"] = 1,["ColorSecondary"] = 1,["MinSecondary"] = 1},["blemishes"] = {["style"] = -1,["opacity"] = 1.0},["ageing"] = {["style"] = -1,["opacity"] = 1.0},["complexion"] = {["style"] = -1,["opacity"] = 1.0},["freckles"] = {["style"] = -1,["opacity"] = 1.0},["sundamage"] = {["style"] = -1,["opacity"] = 1.0},["eye"] = {["style"] = -1},["eyemackeup"] = {["style"] = -1,["opacity"] = 1.0,["ColorPrimary"] = 1,["MinPrimary"] = 1},["lipstick"] = {["style"] = -1,["opacity"] = 1.0,["ColorPrimary"] = 1,["MinPrimary"] = 1}}
 }
-LEEDS.Character = {sexe = 1,identity = {["lastname"] = "",["firstname"] = "",["nationality"] = "",["dob"] = "",["pob"] = "",["sexe"] = "Homme",["height"] = ""},face = {model = "mp_f_freemode_01",parent = {mom = 1,dad = 1,resemblance = 5,skinMix = 5},features = {["eyebrow"] = {["height"] = 0.5, ["forward"] = 0.5},["eye"] = {["opening"] = 0.5},["nose"] = {["width"] = 0.5,["peakHeight"] = 0.5,["peakLength"] = 0.5,["peakLowering"] = 0.5,["boneHeight"] = 0.5,["boneTwist"] = 0.5},["cheeks"] = {["boneHeight"] = 0.5, ["boneWidth"] = 0.5},["lips"] = {["thickness"] = 0.5},["jaw"] = {["boneWidth"] = 0.5, ["boneBackLength"] = 0.5},["chimp"] = {["hole"] = 0.5, ["boneLength"] = 0.5, ["boneWidth"] = 0.5, ["boneLowering"] = 0.5}},apparence = {["hair"] = {["style"] = -1,["ColorPrimary"] = 1,["MinPrimary"] = 1,["ColorSecondary"] = 1,["MinSecondary"] = 1},["beard"] = {["style"] = -1,["opacity"] = 1.0,["ColorPrimary"] = 1,["MinPrimary"] = 1,["ColorSecondary"] = 1,["MinSecondary"] = 1},["eyebrows"] = {["style"] = -1,["opacity"] = 1.0,["ColorPrimary"] = 1,["MinPrimary"] = 1,["ColorSecondary"] = 1,["MinSecondary"] = 1},["blemishes"] = {["style"] = -1,["opacity"] = 1.0},["ageing"] = {["style"] = -1,["opacity"] = 1.0},["complexion"] = {["style"] = -1,["opacity"] = 1.0},["freckles"] = {["style"] = -1,["opacity"] = 1.0},["sundamage"] = {["style"] = -1,["opacity"] = 1.0},["eye"] = {["style"] = -1},["eyemackeup"] = {["style"] = -1,["opacity"] = 1.0,["ColorPrimary"] = 1,["MinPrimary"] = 1},["lipstick"] = {["style"] = -1,["opacity"] = 1.0,["ColorPrimary"] = 1,["MinPrimary"] = 1}}}}
+LEEDS.Character = {sexe = 1,identity = {["lastname"] = "",["firstname"] = "",["nationality"] = "",["dob"] = "",["pob"] = "",["sexe"] = "Homme",["faction"] = "Law Enforcement",["height"] = ""},face = {model = "mp_f_freemode_01",parent = {mom = 1,dad = 1,resemblance = 5,skinMix = 5},features = {["eyebrow"] = {["height"] = 0.5, ["forward"] = 0.5},["eye"] = {["opening"] = 0.5},["nose"] = {["width"] = 0.5,["peakHeight"] = 0.5,["peakLength"] = 0.5,["peakLowering"] = 0.5,["boneHeight"] = 0.5,["boneTwist"] = 0.5},["cheeks"] = {["boneHeight"] = 0.5, ["boneWidth"] = 0.5},["lips"] = {["thickness"] = 0.5},["jaw"] = {["boneWidth"] = 0.5, ["boneBackLength"] = 0.5},["chimp"] = {["hole"] = 0.5, ["boneLength"] = 0.5, ["boneWidth"] = 0.5, ["boneLowering"] = 0.5}},apparence = {["hair"] = {["style"] = -1,["ColorPrimary"] = 1,["MinPrimary"] = 1,["ColorSecondary"] = 1,["MinSecondary"] = 1},["beard"] = {["style"] = -1,["opacity"] = 1.0,["ColorPrimary"] = 1,["MinPrimary"] = 1,["ColorSecondary"] = 1,["MinSecondary"] = 1},["eyebrows"] = {["style"] = -1,["opacity"] = 1.0,["ColorPrimary"] = 1,["MinPrimary"] = 1,["ColorSecondary"] = 1,["MinSecondary"] = 1},["blemishes"] = {["style"] = -1,["opacity"] = 1.0},["ageing"] = {["style"] = -1,["opacity"] = 1.0},["complexion"] = {["style"] = -1,["opacity"] = 1.0},["freckles"] = {["style"] = -1,["opacity"] = 1.0},["sundamage"] = {["style"] = -1,["opacity"] = 1.0},["eye"] = {["style"] = -1},["eyemackeup"] = {["style"] = -1,["opacity"] = 1.0,["ColorPrimary"] = 1,["MinPrimary"] = 1},["lipstick"] = {["style"] = -1,["opacity"] = 1.0,["ColorPrimary"] = 1,["MinPrimary"] = 1}}}}
 
 local characterManagerIsActif = false
 function characterManagerMenu()
@@ -91,6 +90,8 @@ function characterManagerMenu()
     RMenu.Add('characterManager', 'feature', RageUI.CreateSubMenu(RMenu:Get('characterManager', 'creator'), "", "~b~Feature"))
     RMenu.Add('characterManager', 'apparence', RageUI.CreateSubMenu(RMenu:Get('characterManager', 'creator'), "", "~b~Apparence"))
     RMenu.Add('characterManager', 'cloth', RageUI.CreateSubMenu(RMenu:Get('characterManager', 'creator'), "", "~b~Vétements"))
+    RMenu.Add('characterManager', 'departement', RageUI.CreateSubMenu(RMenu:Get('characterManager', 'character'), "", "~b~Département"))
+    RMenu.Add('characterManager', 'selectDepartement', RageUI.CreateSubMenu(RMenu:Get('characterManager', 'departement'), "", "~b~Département"))
     RMenu.Add('characterManager', 'identity', RageUI.CreateSubMenu(RMenu:Get('characterManager', 'creator'), "", "~b~Identité"))
     RMenu.Add('characterManager', 'nationality', RageUI.CreateSubMenu(RMenu:Get('characterManager', 'identity'), "", "~b~Nationalité"))
     RMenu:Get('characterManager', 'feature').EnableMouse = true
@@ -146,6 +147,7 @@ function characterManagerMenu()
                     for k,v in pairs(LEEDS.PlayerData.charList) do
                         RageUI.Button(v.lastname.." "..v.firstname, nil, {RightLabel = LEEDS.Emoticon.Droite}, true, {
                             onSelected = function()
+                                SelectType(v.type)
                                 LEEDS.PlayerData.charSelected = v.id
                                 LEEDS.PlayerData.charName = v.lastname.." "..v.firstname
                                 RMenu:Get('characterManager', 'character'):SetPageCounter("~b~"..LEEDS.PlayerData.charName)
@@ -182,6 +184,8 @@ function characterManagerMenu()
         end
             
         createVetementMenu()
+
+        createDepartementMenu()
 
         if RageUI.Visible(RMenu:Get('characterManager', 'identity')) then
             createIdentityMenu()

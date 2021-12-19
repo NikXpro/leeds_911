@@ -6,4 +6,6 @@ data_identityMenu = {
     {Title = "Nationalité", SubTitle = "Nationalité de votre personnage", RightLabel = "~c~Américaine", Type = "submenu", Coords = "nationality", Format = "string"},
     {Title = "Lieux de naissance", SubTitle = "Lieux de naissance de votre personnage", RightLabel = "~c~Los santos", Type = "button", Coords = "pob", Format = "string"},
     {Title = "Date de naissance", SubTitle = "Date de naissance de votre personnage", RightLabel = "~c~25/06/2003", Type = "button", Coords = "dob", Format = "date"},
+    {Title = "Faction", SubTitle = "Faction de votre personnage", Type = "list", Data = {"Law Enforcement", "Fire & Rescue", "Civilian"}, Index = 1, Coords = "faction"},
+
 }
