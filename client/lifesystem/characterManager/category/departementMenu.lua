@@ -27,7 +27,6 @@ function createDepartementMenu()
             if LEEDS.PlayerData.charType ~= nil then
                 for areaId, area in pairs(Config.departementList[LEEDS.PlayerData.charType]) do
                     if area.Activate then
-                        if area.Type == LEEDS.PlayerData.charType then
                             RageUI.Button(area.Label, nil, {RightLabel = LEEDS.Emoticon.Plus}, true, {
                                 onActive = function()
                                     dictionary = area.Texture
@@ -36,9 +35,7 @@ function createDepartementMenu()
                                     TriggerServerEvent('leeds:editCharacter', "select", LEEDS.PlayerData.charSelected, LEEDS.PlayerData.charType, areaId)
                                     RageUI.CloseAll(true)
                                 end
-                            });                        
-                        end
-                        
+                            });   
                     else
                         RageUI.Button(area.Label, nil, {}, false, {
                             onActive = function()
@@ -49,8 +46,8 @@ function createDepartementMenu()
                 end
             else
                 dictionary = ""
-                RageUI.Separator("Aucun département n'a etait trouver !")              
-                RageUI.Separator("contacter un administrateur")              
+                RageUI.Separator("Aucun département n'a etait trouver !")
+                RageUI.Separator("contacter un administrateur")
             end
         end)
     end

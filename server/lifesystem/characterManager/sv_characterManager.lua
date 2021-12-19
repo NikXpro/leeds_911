@@ -56,6 +56,7 @@ AddEventHandler('leeds:editCharacter', function(type, charaterData, charType, ar
         else
             if Config.departementList[charType][areaId] then
                 SetEntityCoords(GetPlayerPed(src_), Config.departementList[charType][areaId].Coords, false, false, false, true)
+                SetEntityHeading(GetPlayerPed(src_), Config.departementList[charType][areaId].Heading)
             end
         end
 
