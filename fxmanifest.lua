@@ -49,20 +49,32 @@ client_scripts {
 
     'Config.lua',
     'client/utils/_function.lua',
-    'client/utils/visual.lua',
-    'client/utils/string.lua',
     'client/utils/anim.lua',
+    'client/utils/audio.lua',
+    'client/utils/callback.lua',
+    'client/utils/entity.lua',
+    'client/utils/table.lua',
+    'client/utils/visual.lua',
     'client/utils/keys.lua',
     'client/utils/other.lua',
+    'client/utils/string.lua',
 
-    
+    'client/lifeSystem/characterManager/_function.lua',
+    'client/lifeSystem/characterManager/cl_characterManager.lua',
+    'data/characterManager/data_apparenceList.lua',
+    'data/characterManager/data_apparenceMenu.lua',
+    'data/characterManager/data_identityMenu.lua',
+    'data/characterManager/data_nationalityList.lua',
+    'data/characterManager/data_creatorMenu.lua',
+    'data/characterManager/data_featureList.lua',
+    'data/characterManager/data_featureMenu.lua',
+    'client/lifeSystem/characterManager/category/*.lua',
+
     'client/lifesystem/garage/_function.lua',
     'client/lifesystem/garage/menu.lua',
     'client/lifesystem/vestiaire/_function.lua',
     'client/lifesystem/vestiaire/menu.lua',
     'client/lifesystem/armurerie/menu.lua',
-    'client/lifesystem/spawnManager/_function.lua',
-    'client/lifesystem/spawnManager/menu.lua',
     'client/lifesystem/interaction/_function.lua',
     'client/lifesystem/interaction/menu.lua',
     'client/lifesystem/me/main.lua',
@@ -83,8 +95,12 @@ server_scripts {
 
     'Config.lua',
     'server/utils/_function.lua',
+    'server/utils/mysql.js',
+    'server/utils/mysql.lua',
+    'server/utils/callback.lua',
 
     'server/lifesystem/me.lua',
     'server/lifesystem/interaction.lua',
-    'server/lifesystem/playerJoined.lua'   
+    'server/lifeSystem/characterManager/sv_characterManager.lua',
+    'server/lifeSystem/characterManager/sv_playerSave.lua',
 }

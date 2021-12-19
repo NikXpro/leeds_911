@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "mysql2": "^2.2.5"
+  },
+  "name": "nth_framework",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NikXpro/nth_framework.git"
+  },
+  "author": "NikX#1717",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NikXpro/nth_framework/issues"
+  },
+  "homepage": "https://github.com/NikXpro/nth_framework#readme",
+  "description": ""
+}

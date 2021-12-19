@@ -1,0 +1,5 @@
+[
+    {"name": "bread", "label": "Pain", "weight": 0.5, "prop": "", "type": "hunger"},
+    {"name": "water", "label": "Bouteille d'eau", "weight": 0.5, "prop": "", "type": "thirt"},
+    {"name": "weapon_pistol", "label": "Pistolet", "weight": 7.0, "prop": "", "type": "weapon"}
+]
