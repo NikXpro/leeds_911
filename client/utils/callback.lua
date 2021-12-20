@@ -2,7 +2,7 @@ LEEDS.ServerCallbacks = {}
 LEEDS.ClientCallbacks = {}
 
 LEEDS.TriggerCallback = function(name, cb, data)
-	local e = 'NTH-CallBackServer:'
+	local e = 'LEEDS-CallBackServer:'
 	local sendEvent = e..'' ..name
 	local returnEvent = e..''..name..'_return'
 	if not LEEDS.ServerCallbacks[returnEvent] then
@@ -19,7 +19,7 @@ end
 
 LEEDS.RegisterCallback  = function(name, cb)
 	if not LEEDS.ClientCallbacks[name] then
-		local e = 'NTH-CallBackClient:'..name
+		local e = 'LEEDS-CallBackClient:'..name
 		LEEDS.ClientCallbacks[name] = cb
 		RegisterNetEvent(e)
 		AddEventHandler(e, function(args)

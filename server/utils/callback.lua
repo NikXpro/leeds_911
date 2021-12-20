@@ -3,7 +3,7 @@ LEEDS.ClientCallbacks = {}
 LEEDS.CurrentRequestId = 0
 
 LEEDS.TriggerCallback = function(name, cb, data, player)
-	local e = 'NTH-CallBackClient:'
+	local e = 'LEEDS-CallBackClient:'
 	local sendEvent = e..'' ..name
 	local returnEvent = e..''..name..'_return'
 	if not LEEDS.ClientCallbacks[returnEvent] then
@@ -20,7 +20,7 @@ end
 
 LEEDS.RegisterCallback  = function(name, cb)
 	if not LEEDS.ServerCallbacks[name] then
-		local e = 'NTH-CallBackServer:'..name
+		local e = 'LEEDS-CallBackServer:'..name
 		LEEDS.ServerCallbacks[name] = cb
 		RegisterServerEvent(e)
 		AddEventHandler(e, function(args)
