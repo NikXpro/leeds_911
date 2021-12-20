@@ -12,7 +12,7 @@ function saveCharacterCoords(charId)
     local pedCoords = GetEntityCoords(pedId)
     local pedHeading = GetEntityHeading(pedId)
     local posX, posY, posZ = table.unpack(pedCoords)
-    MySQL.Sync.execute("UPDATE positions SET x = @x, u = @y, z = @z, heading = @heading WHERE type = `characters` AND of = @of", {
+    MySQL.Sync.execute("UPDATE positions SET x = @x, y = @y, z = @z, heading = @heading WHERE type = 'character' AND of = @of", {
         ["x"] = posX,
         ["y"] = posY,
         ["z"] = posZ,
@@ -28,10 +28,21 @@ AddEventHandler('onResourceStop', function(resourceName)
     for i = 1, #LEEDS.CharList do
         saveCharacterCoords(i)
     end
-    print("Resource "..GetCurrentResourceName().. "Stoped ! All player have saved !")
+    print("Resource "..GetCurrentResourceName().. " Stoped ! All player have saved !")
 end)
 
 AddEventHandler('playerDropped', function (reason)
     local src_ = source
+    saveCharacterCoords(LEEDS.PlayerList[src_].charId)
     print("Player "..GetPlayerName(src_).." disconected from this server !")
+end)
+
+
+AddEventHandler('txAdmin:events:scheduledRestart', function(eventData)
+	if eventData.secondsRemaining == 60 then
+		for i = 1, #LEEDS.CharList do
+            saveCharacterCoords(i)
+        end
+        print("Resource "..GetCurrentResourceName().. "Stoped ! All player have saved !")
+	end
 end)
