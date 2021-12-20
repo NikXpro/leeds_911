@@ -63,8 +63,6 @@ function startCharacterScene()
         ClearPlayerWantedLevel(PlayerPedId())
         SetMaxWantedLevel(0)
         characterManagerMenu()
-    else
-        startCharacterScene()
     end
 end
 
