@@ -4,7 +4,7 @@ Config.debug = false
 Config.ServerName = "Last Town V2"
 Config.spawnPoint = {100, 111, 100, 100}
 
-Config.DefaultPermissions = '{"characterAutorized":2}'
+Config.DefaultPermissions = '{"characterAutorized":2, "serverManager":false}'
 Config.interactMenu = false
 Config.meType = "command" --Vide = Désactiver, command = Marche aveec un /me, key = marche avec la touche "T"
 
