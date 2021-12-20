@@ -39,13 +39,13 @@ client_scripts {
 }
 
 client_scripts {
-    'data/admin/data_loadout.lua',
-    'data/admin/data_peds.lua',
-    'data/admin/data_vehicle.lua',
-    'data/data_garage.lua',
-    'data/data_vestiaire.lua',
-    'data/data_armurerie.lua',
-    'data/data_blips.lua',
+    --'data/admin/data_loadout.lua',
+    --'data/admin/data_peds.lua',
+    --'data/admin/data_vehicle.lua',
+    --'data/data_garage.lua',
+    --'data/data_vestiaire.lua',
+    --'data/data_armurerie.lua',
+    --'data/data_blips.lua',
 
     'Config.lua',
     'client/utils/_function.lua',
@@ -70,18 +70,23 @@ client_scripts {
     'data/characterManager/data_featureMenu.lua',
     'client/lifeSystem/characterManager/category/*.lua',
 
-    'client/lifesystem/garage/_function.lua',
-    'client/lifesystem/garage/menu.lua',
-    'client/lifesystem/vestiaire/_function.lua',
-    'client/lifesystem/vestiaire/menu.lua',
-    'client/lifesystem/armurerie/menu.lua',
-    'client/lifesystem/interaction/_function.lua',
-    'client/lifesystem/interaction/menu.lua',
-    'client/lifesystem/me/main.lua',
-    'client/lifesystem/hud/main.lua',
-    'client/lifesystem/_function.lua',
+
+    'data/serverManager/data_departementCreatorMenu.lua',
+    'client/lifesystem/serverManager/cl_serverManager.lua',
+    'client/lifesystem/serverManager/category/*.lua',
+
+    --'client/lifesystem/garage/_function.lua',
+    --'client/lifesystem/garage/menu.lua',
+    --'client/lifesystem/vestiaire/_function.lua',
+    --'client/lifesystem/vestiaire/menu.lua',
+    --'client/lifesystem/armurerie/menu.lua',
+    --'client/lifesystem/interaction/_function.lua',
+    --'client/lifesystem/interaction/menu.lua',
+    --'client/lifesystem/me/main.lua',
+    --'client/lifesystem/hud/main.lua',
+    --'client/lifesystem/_function.lua',
     'client/lifesystem/main.lua',
-    'client/lifesystem/zone_manager.lua',
+    --'client/lifesystem/zone_manager.lua',
 }
 
 server_scripts {
@@ -103,4 +108,6 @@ server_scripts {
     'server/lifesystem/interaction.lua',
     'server/lifeSystem/characterManager/sv_characterManager.lua',
     'server/lifeSystem/characterManager/sv_playerSave.lua',
+
+    'server/lifeSystem/serverManager/sv_serverManager.lua',
 }
