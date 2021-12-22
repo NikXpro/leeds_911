@@ -28,9 +28,9 @@ function Discord.SendAnticheat(source, type, data)
                     ["name"] = "ANTICHEAT - Trigger injection",
                     ["icon_url"] = "https://cdn.discordapp.com/attachments/842450821194711040/922667741381541968/Logopit_1640051166789.png"
                 },
-                ["thumbnail"] = {
-                    ["url"] = "http://localhost:3555/screenshot.jpg"
-                },
+                --["thumbnail"] = {
+                --    ["url"] = "http://localhost:3555/screenshot.jpg"
+                --},
                 ["footer"] = {
                     ["text"] = "ANTICHEAT - Trigger injection",
                     ["icon_url"] = "https://cdn.discordapp.com/attachments/842450821194711040/922667741381541968/Logopit_1640051166789.png"
