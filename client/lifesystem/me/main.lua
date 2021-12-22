@@ -1,5 +1,4 @@
-local meIsDisplaying = false
-
+local type = "command"
 
 local tags = {}
 local plyNetId = GetPlayerServerId(PlayerId())
@@ -17,11 +16,17 @@ AddEventHandler('leeds:meSyncC', function(text, serverId)
 	end
 end)
 
-if Config.meType == "command" then
+if type == "command" then
 	RegisterCommand("me", function(source, args, rawcommand)
-		TriggerServerEvent('leeds:meSyncS', "* La personne " .. args .. " *")
+		TriggerServerEvent('leeds:meSyncS', "me", "La personne " .. table.concat(args, " "))
     end, false)
-elseif Config.meType == "key" then
+	RegisterCommand("do", function(source, args, rawcommand)
+		TriggerServerEvent('leeds:meSyncS', "do", table.concat(args, " "))
+    end, false)
+	RegisterCommand("911", function(source, args, rawcommand)
+		TriggerServerEvent('leeds:meSyncS', "911", table.concat(args, " "))
+    end, false)
+elseif type == "key" then
 	LEEDS.Keys.Register('T', 'T', 'Fait un /me', false, function()
 		Wait(250)
 		local text = KeyboardInput("Texte de votre ~g~/me", "", 50)
