@@ -5,7 +5,11 @@ LEEDS.Index.tempsDepartement = {
     ["depTexture"] = "",
     ["depFaction"] = "",
     ["depCoords"] = "",
-    ["depHeaing"] = "",
+    ["depHeading"] = "",
+    ["depBlipName"] = "",
+    ["depBlipId"] = "",
+    ["depBlipScale"] = "",
+    ["depBlipColor"] = "",
 }
 
 LEEDS.Departement = {
@@ -13,7 +17,11 @@ LEEDS.Departement = {
     depTexture = "",
     depFaction = "",
     depCoords = nil,
-    depHeaing = nil
+    depHeading = nil,
+    depBlipName = "",
+    depBlipId = nil,
+    depBlipScale = nil,
+    depBlipColor = nil,
 }
 function serverManagerMenu()
     LEEDS.Data.Departement = {}

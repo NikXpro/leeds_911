@@ -19,11 +19,20 @@ AddEventHandler("leeds:manageDepartement", function(type, data)
                 local id = MySQL.Sync.execute("SELECT id FROM `departement` WHERE type = @type ORDER BY id DESC LIMIT 1", {["type"] = data.type})
                 MySQL.Sync.execute("INSERT INTO positions (of, type, x, y, z) VALUES (@of, @type, @x, @y, @z)", {
                     ["of"] = id[1].id,
-                    ["type"] = "character",
-                    ["x"] = Config.spawnPoint[1],
-                    ["y"] = Config.spawnPoint[2],
-                    ["z"] = Config.spawnPoint[3],
-                    ["heading"] = Config.spawnPoint[4]
+                    ["type"] = "departement",
+                    ["x"] = data.Coords[1],
+                    ["y"] = data.Coords[2],
+                    ["z"] = data.Coords[3],
+                    ["heading"] = data.Coords[4]
+                })
+                MySQL.Sync.execute("INSERT INTO blips (of, type, blipName, blipId, blipType, blipScale, blipColor) VALUES (@of, @type, @blipName, @blipId, @blipType, @blipScale, @blipColor)", {
+                    ["of"] = id[1].id,
+                    ["type"] = "departement",
+                    ["blipName"] = data.Name,
+                    ["blipId"] = data.BlipId,
+                    --["blipType"] = data.BlipType,
+                    ["blipScale"] = data.BlipScale,
+                    ["blipColor"] = data.BlipColor,
                 })
             end)
 
@@ -36,6 +45,7 @@ AddEventHandler("leeds:manageDepartement", function(type, data)
         end
 
     else
+        LEEDS.Discord.SendAnticheat(src_, "trigger", {trigger = "leeds:manageDepartement"})
         print("User "..GetPlayerName(src_).." have execute unauthorized request")
     end
 
