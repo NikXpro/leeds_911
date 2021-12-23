@@ -3,19 +3,19 @@ local serverManagerIsActive = false
 LEEDS.Index.tempsDepartement = {
     ["depName"] = "",
     ["depTexture"] = "",
-    ["depFaction"] = "",
+    ["depFaction"] = "Law Enforcement",
     ["depCoords"] = "",
     ["depHeading"] = "",
     ["depBlipName"] = "",
-    ["depBlipId"] = "",
-    ["depBlipScale"] = "",
-    ["depBlipColor"] = "",
+    ["depBlipId"] = 0,
+    ["depBlipScale"] = 0.8,
+    ["depBlipColor"] = 0,
 }
 
 LEEDS.Departement = {
     depName = "",
     depTexture = "",
-    depFaction = "",
+    depFaction = "Law Enforcement",
     depCoords = nil,
     depHeading = nil,
     depBlipName = "",
@@ -35,7 +35,7 @@ function serverManagerMenu()
     RMenu.Add('serverManager', 'departementCreator', RageUI.CreateSubMenu(RMenu:Get('serverManager', 'departement'), "", "~b~Département Creator"))
     RMenu.Add('serverManager', 'departementSelected', RageUI.CreateSubMenu(RMenu:Get('serverManager', 'departement'), "", "~b~Département: "))
     RMenu.Add('serverManager', 'departementEdit', RageUI.CreateSubMenu(RMenu:Get('serverManager', 'departementSelected'), "", "~b~Département: "))
-    
+    RMenu.Add('serverManager', 'departementEditGarage', RageUI.CreateSubMenu(RMenu:Get('serverManager', 'departementEdit'), "", "~b~Département: "))
     RMenu:Get('serverManager', 'home').Closed = function(close)
         if close then
             serverManagerIsActive = false

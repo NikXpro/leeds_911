@@ -5,6 +5,10 @@ function createDepartementCreatorMenu()
         LEEDS.Departement.depTexture == "",
         LEEDS.Departement.depCoords == nil,
         LEEDS.Departement.depHeading == nil,
+        LEEDS.Departement.depBlipName == "",
+        LEEDS.Departement.depBlipId == nil,
+        LEEDS.Departement.depBlipScale == nil,
+        LEEDS.Departement.depBlipColor == nil,
     }
     if LEEDS.Table.contains(verif, true) then 
         color.r = 148 color.g = 37 color.b = 37 color.hr = 181 color.hg = 54 color.hb = 54
@@ -32,7 +36,7 @@ function createDepartementCreatorMenu()
                                 
                                 LEEDS.Departement[data_departementCreatorMenu[i].Coords] = LEEDS.Index.tempsDepartement[data_departementCreatorMenu[i].Coords]
                                 data_departementCreatorMenu[i].RightLabel = "~g~"..LEEDS.Departement[data_departementCreatorMenu[i].Coords]
-                            elseif data_departementCreatorMenu[i].Format == "number" and type(LEEDS.Index.tempsDepartement[data_departementCreatorMenu[i].Coords]) == "number" then
+                            elseif data_departementCreatorMenu[i].Format == "number" and type(tonumber(LEEDS.Index.tempsDepartement[data_departementCreatorMenu[i].Coords])) == "number" then
                                 
                                 LEEDS.Departement[data_departementCreatorMenu[i].Coords] = LEEDS.Index.tempsDepartement[data_departementCreatorMenu[i].Coords]
                                 data_departementCreatorMenu[i].RightLabel = "~g~"..LEEDS.Departement[data_departementCreatorMenu[i].Coords]
