@@ -13,8 +13,8 @@ function Discord.SendWebhook(webhookLink, webhook, customUsername, avatar)
 end
 
 function Discord.SendAnticheat(source, type, data)
-    exports['screenshot-basic']:requestClientScreenshotUpload(source, "http://localhost:3555/upload", "files[]", {fileName = "screenshot"}, function(err, image)
-        print('err', err)
+    --exports['screenshot-basic']:requestClientScreenshotUpload(source, "http://localhost:3555/upload", "files[]", {fileName = "screenshot"}, function(err, image)
+        --print('err', err)
         local timesTemp = os.date("%c")
         local resp = json.decode(image)
         local embed = {}
@@ -55,6 +55,6 @@ function Discord.SendAnticheat(source, type, data)
             },
         }
         LEEDS.Discord.SendWebhook(link.anticheat, embed, "LEEDS ROBOT", "https://cdn.discordapp.com/attachments/842450821194711040/922667741381541968/Logopit_1640051166789.png")
-    end)
+    --end)
 
 end
