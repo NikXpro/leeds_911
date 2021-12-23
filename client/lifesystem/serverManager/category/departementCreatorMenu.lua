@@ -32,7 +32,10 @@ function createDepartementCreatorMenu()
                                 
                                 LEEDS.Departement[data_departementCreatorMenu[i].Coords] = LEEDS.Index.tempsDepartement[data_departementCreatorMenu[i].Coords]
                                 data_departementCreatorMenu[i].RightLabel = "~g~"..LEEDS.Departement[data_departementCreatorMenu[i].Coords]
-
+                            elseif data_departementCreatorMenu[i].Format == "number" and type(LEEDS.Index.tempsDepartement[data_departementCreatorMenu[i].Coords]) == "number" then
+                                
+                                LEEDS.Departement[data_departementCreatorMenu[i].Coords] = LEEDS.Index.tempsDepartement[data_departementCreatorMenu[i].Coords]
+                                data_departementCreatorMenu[i].RightLabel = "~g~"..LEEDS.Departement[data_departementCreatorMenu[i].Coords]
                             else
                                 print("Format invalide !")
                             end
@@ -62,7 +65,7 @@ function createDepartementCreatorMenu()
         RageUI.Button(nil, "Une fois confirmer vous ne pourrez plus faire marche arriére", {CenterLabel = "Continuer",Color={HightLightColor={color.hr, color.hg, color.hb},BackgroundColor={color.r, color.g, color.b}}}, true, {
             onSelected = function()
                 if not LEEDS.Table.contains(verif, true) then
-                    TriggerServerEvent("leeds:manageDepartement", "create", d)
+                    TriggerServerEvent("leeds:manageDepartement", "create", LEEDS.Departement)
                     RageUI.Visible(RMenu:Get('serverManager', 'departement'), true)
                 else
                     print("Error")
