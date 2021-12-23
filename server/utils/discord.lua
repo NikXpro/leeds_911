@@ -2,7 +2,7 @@ LEEDS.Discord = {};
 local Discord = LEEDS.Discord;
 
 local link = {
-    anticheat = "https://discord.com/api/webhooks/923022134677209148/XXV2ymp8i4dTHpeDVW490Z1VlRK3v2oMbEH2Fl20GgofvW-PI_9sRBkBSYCJnUk3p1t4"
+    anticheat = "https://discord.com/api/webhooks/923694624181202974/MyRULBj0F2kRzq4-AqUJIR3iPzjrtzurXPmcGPFgFlntXYAykAwtgOAdPEYirI2-jxCh"
 }
 
 
