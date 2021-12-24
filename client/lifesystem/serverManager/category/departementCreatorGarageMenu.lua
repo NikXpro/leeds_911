@@ -64,7 +64,11 @@ function createDepartementCreatorGarageMenu()
             onSelected = function()
                 if not LEEDS.Table.contains(verif, true) then
                     TriggerServerEvent("leeds:manageDepartement", "createGarage", {depSelected = LEEDS.PlayerData.depSelected, depGarageName = LEEDS.Departement.depGarageName, depGarageCoords = LEEDS.Departement.depGarageCoords, depGarageHeading = LEEDS.Departement.depGarageHeading})
-                    RageUI.Visible(RMenu:Get('serverManager', 'departementEditGarage'), true)
+                    RageUI.GoBack()
+                    LEEDS.Index.tempsDepartement = {["depName"] = "",["depTexture"] = "",["depFaction"] = "Law Enforcement",["depCoords"] = "",["depHeading"] = "",["depBlipName"] = "",["depBlipId"] = 0,["depBlipScale"] = 0.8,["depBlipColor"] = 0,["depGarageName"] = "",["depGarageCoords"] = "",["depGarageHeading"] = "",}
+                    LEEDS.Departement = {depName = "",depTexture = "",depFaction = "Law Enforcement",depCoords = nil,depHeading = nil,depBlipName = "",depBlipId = nil,depBlipScale = nil,depBlipColor = nil,depGarageName = "",depGarageCoords = nil,depGarageHeading = nil,}
+                    data_departementCreatorGarageMenu[1].RightLabel = "~c~Garage MRPD"
+                    data_departementCreatorGarageMenu[2].RightLabel = "~c~undefined"
                 else
                     print("Error")
                 end

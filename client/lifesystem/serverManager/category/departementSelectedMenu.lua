@@ -5,6 +5,7 @@ function createDepartementSelectedMenu()
         RageUI.Button("Supprimer", nil, {RightLabel = LEEDS.Emoticon.Droite}, true, {
             onSelected = function()
                 TriggerServerEvent("leeds:manageDepartement", "delete", LEEDS.PlayerData.depSelected)
+                RageUI.GoBack()
             end
         })
     end, function()

@@ -1,4 +1,5 @@
 LEEDS.Data = {}
+LEEDS.Data.Departement = {}
 local serverManagerIsActive = false
 LEEDS.Index.tempsDepartement = {
     ["depName"] = "",
@@ -29,13 +30,23 @@ LEEDS.Departement = {
     depGarageCoords = nil,
     depGarageHeading = nil,
 }
-function serverManagerMenu()
-    LEEDS.Data.Departement = {}
 
+function updateData()
+    print("update Data !")
     LEEDS.TriggerCallback("leeds:requestData", function(data)
         LEEDS.Data.Departement = data
         print(json.encode(LEEDS.Data.Departement, {indent=true}))
-    end, "departement")
+    end)
+end
+
+RegisterNetEvent("leeds:updateData")
+AddEventHandler("leeds:updateData", function(data)
+    LEEDS.Data.Departement = data
+end)
+
+function serverManagerMenu()
+    updateData()
+
     RMenu.Add('serverManager', 'home', RageUI.CreateMenu("", "~b~Server Manager"))
     RMenu.Add('serverManager', 'departement', RageUI.CreateSubMenu(RMenu:Get('serverManager', 'home'), "", "~b~Département manager"))
     RMenu.Add('serverManager', 'departementCreator', RageUI.CreateSubMenu(RMenu:Get('serverManager', 'departement'), "", "~b~Département Creator"))

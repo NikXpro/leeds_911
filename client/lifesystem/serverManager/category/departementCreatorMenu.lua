@@ -70,7 +70,19 @@ function createDepartementCreatorMenu()
             onSelected = function()
                 if not LEEDS.Table.contains(verif, true) then
                     TriggerServerEvent("leeds:manageDepartement", "create", LEEDS.Departement)
-                    RageUI.Visible(RMenu:Get('serverManager', 'departement'), true)
+                    RageUI.GoBack()
+                    LEEDS.Index.tempsDepartement = {["depName"] = "",["depTexture"] = "",["depFaction"] = "Law Enforcement",["depCoords"] = "",["depHeading"] = "",["depBlipName"] = "",["depBlipId"] = 0,["depBlipScale"] = 0.8,["depBlipColor"] = 0,["depGarageName"] = "",["depGarageCoords"] = "",["depGarageHeading"] = "",}
+                    LEEDS.Departement = {depName = "",depTexture = "",depFaction = "Law Enforcement",depCoords = nil,depHeading = nil,depBlipName = "",depBlipId = nil,depBlipScale = nil,depBlipColor = nil,depGarageName = "",depGarageCoords = nil,depGarageHeading = nil,}
+                    data_departementCreatorMenu[1].RightLabel = "~c~MRPD"
+                    data_departementCreatorMenu[2].RightLabel = "~c~mrpd_texture"
+                    data_departementCreatorMenu[3].Index = 1
+                    data_departementCreatorMenu[4].RightLabel = "~c~undefined"
+                    data_departementCreatorMenu[5].RightLabel = "~c~MRPD"
+                    data_departementCreatorMenu[6].RightLabel = "~c~1"
+                    data_departementCreatorMenu[7].RightLabel = "~c~0.8"
+                    data_departementCreatorMenu[8].RightLabel = "~c~1"
+
+                    
                 else
                     print("Error")
                 end
