@@ -72,8 +72,14 @@ client_scripts {
 
 
     'data/serverManager/data_departementCreatorMenu.lua',
+    'data/serverManager/data_departementCreatorGarageMenu.lua',
     'client/lifesystem/serverManager/cl_serverManager.lua',
-    'client/lifesystem/serverManager/category/*.lua',
+    'client/lifesystem/serverManager/category/departementMenu.lua',
+    'client/lifesystem/serverManager/category/departementSelectedMenu.lua',
+    'client/lifesystem/serverManager/category/departementCreatorMenu.lua',
+    'client/lifesystem/serverManager/category/departementCreatorGarageMenu.lua',
+    'client/lifesystem/serverManager/category/departementEditMenu.lua',
+    'client/lifesystem/serverManager/category/departementEditGarageMenu.lua',
 
     --'client/lifesystem/garage/_function.lua',
     --'client/lifesystem/garage/menu.lua',
@@ -82,7 +88,7 @@ client_scripts {
     --'client/lifesystem/armurerie/menu.lua',
     --'client/lifesystem/interaction/_function.lua',
     --'client/lifesystem/interaction/menu.lua',
-    --'client/lifesystem/me/main.lua',
+    'client/lifesystem/me/main.lua',
     --'client/lifesystem/hud/main.lua',
     --'client/lifesystem/_function.lua',
     'client/lifesystem/main.lua',
@@ -103,6 +109,7 @@ server_scripts {
     'server/utils/mysql.js',
     'server/utils/mysql.lua',
     'server/utils/callback.lua',
+    'server/utils/discord.lua',
 
     'server/lifesystem/me.lua',
     'server/lifesystem/interaction.lua',

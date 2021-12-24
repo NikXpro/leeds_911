@@ -1,7 +1,7 @@
 LEEDS.RegisterCallback("leeds:requestData", function(type, source, cb)
     if type == "departement" then
         local departementList = MySQL.Sync.execute("SELECT departement.id, departement.type, departement.name, departement.texture, positions.x, positions.y, positions.z, blips.blipName, blips.blipId, blips.blipType, blips.blipScale, blips.blipColor FROM `departement`, `positions`, `blips` WHERE positions.type = 'departement' AND departement.id = positions.of AND departement.id = blips.of AND blips.type = 'departement' AND departement.deleted = 0 LIMIT 0, 300")
-        cb(departementList)        
+        cb(departementList)
     end
 end)
 
@@ -36,7 +36,22 @@ AddEventHandler("leeds:manageDepartement", function(type, data)
                     ["blipColor"] = data.depBlipColor,
                 })
             end)
-
+        elseif type == "createGarage" then
+            MySQL.Async.execute("INSERT INTO `garage` (of, type, garageName) VALUES (@of, @type, @garageName)", {
+                ["of"] = data.depSelected,
+                ["type"] = "departement",
+                ["garageName"] = data.depGarageName
+            }, function()
+                local id = MySQL.Sync.execute("SELECT id FROM `garage` WHERE type = 'departement' ORDER BY id DESC LIMIT 1", {})
+                MySQL.Sync.execute("INSERT INTO positions (of, type, x, y, z) VALUES (@of, @type, @x, @y, @z)", {
+                    ["of"] = id[1].id,
+                    ["type"] = "garage",
+                    ["x"] = data.depGarageCoords[1],
+                    ["y"] = data.depGarageCoords[2],
+                    ["z"] = data.depGarageCoords[3],
+                    ["heading"] = data.depGarageHeading
+                })
+            end)
         elseif type == "edit" then
             
 

@@ -10,6 +10,7 @@ function createDepartementManagerMenu()
                     LEEDS.PlayerData.depSelected = dep.id
                     RMenu:Get('serverManager', 'departementSelected'):SetPageCounter("~b~"..dep.name)
                     RMenu:Get('serverManager', 'departementEdit'):SetPageCounter("~b~"..dep.name)
+                    RMenu:Get('serverManager', 'departementEditGarage'):SetPageCounter("~b~"..dep.name)
                 end
             }, RMenu:Get('serverManager', 'departementSelected'))
         end

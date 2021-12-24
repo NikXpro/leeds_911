@@ -10,6 +10,9 @@ LEEDS.Index.tempsDepartement = {
     ["depBlipId"] = 0,
     ["depBlipScale"] = 0.8,
     ["depBlipColor"] = 0,
+    ["depGarageName"] = "",
+    ["depGarageCoords"] = "",
+    ["depGarageHeading"] = "",
 }
 
 LEEDS.Departement = {
@@ -22,6 +25,9 @@ LEEDS.Departement = {
     depBlipId = nil,
     depBlipScale = nil,
     depBlipColor = nil,
+    depGarageName = "",
+    depGarageCoords = nil,
+    depGarageHeading = nil,
 }
 function serverManagerMenu()
     LEEDS.Data.Departement = {}
@@ -33,9 +39,11 @@ function serverManagerMenu()
     RMenu.Add('serverManager', 'home', RageUI.CreateMenu("", "~b~Server Manager"))
     RMenu.Add('serverManager', 'departement', RageUI.CreateSubMenu(RMenu:Get('serverManager', 'home'), "", "~b~Département manager"))
     RMenu.Add('serverManager', 'departementCreator', RageUI.CreateSubMenu(RMenu:Get('serverManager', 'departement'), "", "~b~Département Creator"))
+
     RMenu.Add('serverManager', 'departementSelected', RageUI.CreateSubMenu(RMenu:Get('serverManager', 'departement'), "", "~b~Département: "))
     RMenu.Add('serverManager', 'departementEdit', RageUI.CreateSubMenu(RMenu:Get('serverManager', 'departementSelected'), "", "~b~Département: "))
     RMenu.Add('serverManager', 'departementEditGarage', RageUI.CreateSubMenu(RMenu:Get('serverManager', 'departementEdit'), "", "~b~Département: "))
+    RMenu.Add('serverManager', 'departementCreatorGarage', RageUI.CreateSubMenu(RMenu:Get('serverManager', 'departementEditGarage'), "", "~b~Département: "))
     RMenu:Get('serverManager', 'home').Closed = function(close)
         if close then
             serverManagerIsActive = false
@@ -65,8 +73,15 @@ function serverManagerMenu()
             createDepartementEditMenu()
         end
         
+        if RMenu:Get('serverManager', 'departementEditGarage') then
+            createDepartementEditGarageMenu()
+        end
+        
         if RMenu:Get('serverManager', 'departementCreator') then
             createDepartementCreatorMenu()
+        end
+        if RMenu:Get('serverManager', 'departementCreatorGarage') then
+            createDepartementCreatorGarageMenu()
         end
         Citizen.Wait(0)
     end
