@@ -96,13 +96,13 @@ client_scripts {
 }
 
 server_scripts {
-    'data/admin/data_loadout.lua',
-    'data/admin/data_peds.lua',
-    'data/admin/data_vehicle.lua',
-    'data/data_garage.lua',
-    'data/data_vestiaire.lua',
-    'data/data_armurerie.lua',
-    'data/data_blips.lua',
+    --'data/admin/data_loadout.lua',
+    --'data/admin/data_peds.lua',
+    --'data/admin/data_vehicle.lua',
+    --'data/data_garage.lua',
+    --'data/data_vestiaire.lua',
+    --'data/data_armurerie.lua',
+    --'data/data_blips.lua',
 
     'Config.lua',
     'server/utils/_function.lua',
