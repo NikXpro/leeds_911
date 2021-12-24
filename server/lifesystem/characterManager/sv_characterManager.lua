@@ -90,7 +90,7 @@ function getUserCreated(source, loop)
             if loop then
                 --Notif de bug au joueur
             elseif not loop then
-                MySQL.Async.execute("INSERT INTO users (username, license, permissions) VALUES (@username, @license, @permissions)", {["username"] = LEEDS.PlayerList[source].username, ["license"] = LEEDS.PlayerList[source].license, ["permissions"] = '{"characterAutorized":2}'}, function()
+                MySQL.Async.execute("INSERT INTO users (username, license, permissions) VALUES (@username, @license, @permissions)", {["username"] = LEEDS.PlayerList[source].username, ["license"] = LEEDS.PlayerList[source].license, ["permissions"] = Config.DefaultPermissions}, function()
                     print("^2[DB] ^1User ^7"..LEEDS.PlayerList[source].username.." ^1registered ! Loading data...^7")
                     getUserCreated(source, true)
                 end)
