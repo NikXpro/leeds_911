@@ -1,7 +1,7 @@
 LEEDS.Table = {};
 local Table = LEEDS.Table;
-function Table:empty()
-    for _ in pairs(self) do
+function Table.empty(table)
+    for _ in pairs(table) do
         return false
     end
     return true
